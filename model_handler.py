@@ -1,24 +1,29 @@
 import os
-from file_handler import OPEN_API_KEY
 from langchain.llms import OpenAI
 from langchain import PromptTemplate, LLMChain
 from langchain.chains import ConversationChain
 from langchain.chains.conversation.memory import ConversationBufferMemory
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
+load_dotenv()
 
-os.environ["OPEN_API_KEY"] = OPEN_API_KEY
-memory_list = list()
+# Access the API key
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+# print(OPENAI_API_KEY)
+
+memory_list = list()    
 
 
 def initialize_model(model_type):
-    llm = OpenAI(model_name=model_type.value, openai_api_key=OPEN_API_KEY)
+    llm = OpenAI(model_name=model_type.value, openai_api_key=OPENAI_API_KEY)
     return llm
 
 def return_ai_response(llm,input_question):
     template = "Answer the question as an expert on LAU only. Question: {question}."
     prompt = PromptTemplate(template=template, input_variables=["question"])
     output = prompt.format(question=input_question)
-    llm = OpenAI(model_name="text-davinci-003", openai_api_key=OPEN_API_KEY)
+    llm = OpenAI(model_name="text-davinci-003", openai_api_key=OPENAI_API_KEY)
     llm_chain = LLMChain(llm=llm, prompt=prompt) 
     response = llm_chain.run(question = output)
     return response

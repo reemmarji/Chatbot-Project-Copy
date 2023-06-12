@@ -5,13 +5,18 @@ from lookups import LLM_MODEL_TYPE
 # from streamlit_handler import kill_st
 import streamlit as st
 
-
 st.markdown(
     """
-    <h1 style="color: white;">ChatLAU</h1>
+    <style>
+    .title {
+        color: white; /* Set text color to white */
+        font-size: 75px; /* Set font size */
+    }
+    </style>
     """,
     unsafe_allow_html=True
 )
+st.markdown('<h1 class="title">ChatLAU</h1>', unsafe_allow_html=True)
 # st.title('<div class="title">ChatLAU</div>', unsafe_allow_html=True)
 
 # st.markdown(html_code, unsafe_allow_html=True)
@@ -40,6 +45,7 @@ st.markdown(
     .text-input-label {
         color: white; /* Set text color to white */
         margin-bottom: 0; /* Remove bottom margin */
+        font-size: 20px; /* Set font size to 20 pixels */
     }
     </style>
     """,
@@ -57,7 +63,7 @@ st.markdown(
     """
     <style>
     .text-container {
-        background-color: rgba(255, 255, 255, 0.9); /* Opaque white background */
+        background-color: rgba(255, 255, 255, 0.8); /* Opaque white background */
         padding: 10px;
         border-radius: 5px;
         margin-bottom: 10px;
