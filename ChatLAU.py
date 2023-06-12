@@ -76,7 +76,7 @@ st.markdown(
 
 if question:
     st.write(f'<div class="text-container"><span style="color: black;">You:</span> {question}</div>', unsafe_allow_html=True)
-    st.write(f'<div class="text-container"><span style="color: black;">ChatLAU:</span> {response}</div>', unsafe_allow_html=True)
+    st.write(f'<div class="text-container"><span style="color: white;">ChatLAU:</span> {response}</div>', unsafe_allow_html=True)
 
  
 
