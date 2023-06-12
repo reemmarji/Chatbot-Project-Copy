@@ -1,3 +1,4 @@
 streamlit==0.88.0
 langchain
+openai
 cryptography
