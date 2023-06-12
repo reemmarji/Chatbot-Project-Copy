@@ -59,24 +59,24 @@ llm_model = initialize_model(LLM_MODEL_TYPE.DAVINCI)
 response = return_ai_response(llm_model, question)
 
 
-st.markdown(
-    """
+css = '''
     <style>
-    .text-container {
-        background-color: rgba(255, 255, 255, 0.8); /* Opaque white background */
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        color: rgba(50, 50, 50, 1.0);
-    }
+        .text-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .text-container span {
+            color: black;
+        }
     </style>
-    """,
-    unsafe_allow_html=True
-)
+'''
+
+st.markdown(css, unsafe_allow_html=True)
 
 if question:
-    st.write(f'<div class="text-container"><span style="color: black;">You:</span> {question}</div>', unsafe_allow_html=True)
-    st.write(f'<div class="text-container"><span style="color: black;">ChatLAU:</span> {response}</div>', unsafe_allow_html=True) 
+    st.markdown(f'<div class="text-container"><span>You:</span> {question}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="text-container"><span>ChatLAU:</span> {response}</div>', unsafe_allow_html=True)
     
 
  
