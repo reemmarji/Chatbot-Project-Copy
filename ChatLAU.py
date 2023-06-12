@@ -32,7 +32,7 @@ def add_bg_from_url():
              background-size: cover
              color: white;  /* Set text color to white */
          }}
-         </style>
+         </style>   
          """,
          unsafe_allow_html=True
      )
