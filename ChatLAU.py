@@ -45,7 +45,7 @@ st.markdown(
     .text-input-label {
         color: white; /* Set text color to white */
         margin-bottom: 0; /* Remove bottom margin */
-        font-size: 20px; /* Set font size to 20 pixels */
+        font-size: 18px; /* Set font size to 18 pixels */
     }
     </style>
     """,
@@ -76,8 +76,8 @@ st.markdown(
 
 if question:
     st.write(f'<div class="text-container"><span style="color: black;">You:</span> {question}</div>', unsafe_allow_html=True)
-    st.write(f'<div class="text-container"><span style="color: black;">ChatLAU:</span> <span style="color: white;">ChatLAU:{response}</span></div>', unsafe_allow_html=True)
-    
+    st.write(f'<div class="text-container"><span style="color: black;">ChatLAU:</span> </div>', unsafe_allow_html=True) 
+    st.write(f'<div class="text-container"><span style="color: white;"> {response}</span> </div>', unsafe_allow_html=True) 
 
  
 
