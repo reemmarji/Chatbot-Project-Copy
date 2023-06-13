@@ -45,7 +45,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st_version = str(st.__version__)
-st.write('<p class="text-input-label">v' + str(st_version) + ' - Tell me something...</p>', unsafe_allow_html=True)
+st.write('<p class="text-input-label">Tell me something...</p>', unsafe_allow_html=True)
 question = st.text_input('', value='', key=None, type='default', help=None)
 
 llm_model = initialize_model(LLM_MODEL_TYPE.DAVINCI)
