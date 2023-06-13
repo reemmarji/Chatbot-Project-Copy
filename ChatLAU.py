@@ -1,8 +1,5 @@
 from model_handler import return_ai_response, initialize_model
 from lookups import LLM_MODEL_TYPE
-# from streamlit_html import html_code
-
-# from streamlit_handler import kill_st
 import streamlit as st
 
 st.markdown(
@@ -17,10 +14,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown('<h1 class="title">ChatLAU</h1>', unsafe_allow_html=True)
-# st.title('<div class="title">ChatLAU</div>', unsafe_allow_html=True)
-
-# st.markdown(html_code, unsafe_allow_html=True)
-# st.text_input("Enter your text", value=component_value, key='text_input')
 
 def add_bg_from_url():
     st.markdown(
@@ -51,8 +44,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.write('<p class="text-input-label">Tell me something...</p>', unsafe_allow_html=True)
+st_version = str(st.__version__)
+st.write('<p class="text-input-label">v' + str(st_version) + ' - Tell me something...</p>', unsafe_allow_html=True)
 question = st.text_input('', value='', key=None, type='default', help=None)
 
 llm_model = initialize_model(LLM_MODEL_TYPE.DAVINCI)
@@ -77,16 +70,3 @@ st.markdown(css, unsafe_allow_html=True)
 if question:
     st.markdown(f'<div class="text-container"><span>You:</span> {question}</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="text-container"><span>ChatLAU:</span> {response}</div>', unsafe_allow_html=True) 
-    
-
- 
-
-    # if question=='exit':
-    #     kill_st()
-
-# conversation = ConversationChain(
-#     llm=llm, 
-#     verbose=True, 
-#     memory=ConversationBufferMemory()
-# )
-# conversation.predict(question)
