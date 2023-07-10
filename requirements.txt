@@ -9,4 +9,3 @@ Cython
 pytesseract
 pillow 
 pinecone
-pinecone-client
