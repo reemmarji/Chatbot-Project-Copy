@@ -1,2 +1,11 @@
 streamlit
 langchain
+openai
+cryptography
+unstructured  
+pybind11
+chromadb 
+Cython 
+pytesseract
+pillow 
+pinecone-client
