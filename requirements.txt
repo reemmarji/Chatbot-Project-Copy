@@ -8,5 +8,4 @@ chromadb
 Cython 
 pytesseract
 pillow 
-pinecone
 pinecone-client
